@@ -1,0 +1,15 @@
+---
+# handlers file for Deploy
+- name: restart tomcat
+  listen: Restarttomcat
+  service:
+    name: tomcat7
+    state: restarted
+  when: ansible_os_family == "Debian"  
+- name: restart tomcat
+  listen: Restarttomcat
+  service:
+    name: tomcat
+    state: restarted
+  when: ansible_os_family == "RedHat"
+

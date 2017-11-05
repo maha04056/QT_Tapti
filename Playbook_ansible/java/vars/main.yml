@@ -1,0 +1,4 @@
+---
+# vars file for java
+Ubuntu_java: openjdk-8-jdk 
+Redhat_java: java-1.8.0-openjdk

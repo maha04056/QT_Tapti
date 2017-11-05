@@ -1,0 +1,5 @@
+---
+# vars file for Deploy
+
+build_num: 10
+url_path: http://34.214.175.185:8081/artifactory/qttapti_sit/{{build_num}}/target/QTtapti-1.0.war

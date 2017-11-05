@@ -1,0 +1,49 @@
+---
+# tasks file for Deploy
+- name: stop tomcat7
+  service: 
+    name: tomcat7
+    state: stopped
+  when: ansible_os_family == "Debian"  
+
+- name: stop tomcat on redhat
+  service:
+    name: tomcat
+    state: stopped
+  when: ansible_os_family == "RedHat"
+
+- name: remove exisitng var
+  file: 
+    path: "{{ item }}" 
+    state: absent
+  with_items:
+    - /var/lib/tomcat7/webapps/QTtapti-1.0
+    - /var/lib/tomcat7/webapps/QTtapti-1.0.war
+  when: ansible_os_family == "Debian"
+
+- name: remove exisitng var
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /var/lib/tomcat/webapps/QTtapti-1.0
+    - /var/lib/tomcat/webapps/QTtapti-1.0.war
+  when: ansible_os_family == "RedHat"
+
+- name: Downliading war file
+  get_url:
+    url: "{{ url_path }}"
+    dest: /var/lib/tomcat7/webapps/
+    force_basic_auth: yes
+  when: ansible_os_family == "Debian"
+  notify: Restarttomcat
+
+- name: Downliading war file
+  get_url:
+    url: "{{ url_path }}"
+    dest: /var/lib/tomcat/webapps/
+    force_basic_auth: yes
+  when: ansible_os_family == "RedHat"
+  notify: Restarttomcat
+
+

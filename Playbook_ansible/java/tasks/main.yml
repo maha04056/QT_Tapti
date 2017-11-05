@@ -1,0 +1,17 @@
+---
+# tasks file for java
+- name: installing java on Ubuntu
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ Ubuntu_java }}"
+  when: ansible_os_family == "Debian" #  ansible_os_family= "Debian"
+
+- name: installing java on Redhat
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ Redhat_java }}"
+  when: ansible_os_family == "RedHat"

@@ -1,0 +1,13 @@
+---
+# vars file for tomcat
+tomcat_pack: [ "tomcat", "tomcat-webapps", "tomcat-admin-webapps" ]
+
+
+# java hep mem varibles
+
+max_mem: 512
+min_mem: 256
+
+
+tomcat_user: admin
+tomcat_passwd: qttapti

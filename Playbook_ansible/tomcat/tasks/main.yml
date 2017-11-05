@@ -1,0 +1,28 @@
+---
+# tasks file for tomcat
+- name: installing tomcat packages on Redhat
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ tomcat_pack }}"
+
+- name: started tomcat on redhat
+  service:
+    name: tomcat
+    state: started
+
+- name: increasing Java heap mem
+  template:
+    src: tomcat.conf.j2
+    dest: /usr/share/tomcat/conf/tomcat.conf
+    mode: 0644
+  notify: Restarttomcat
+
+- name: Configure Tomcat Web Management Interface
+  template:
+    src: tomcat-users.xml.j2
+    dest: /usr/share/tomcat/conf/tomcat-users.xml
+    mode: 0644
+  notify: Restarttomcat
+ 
