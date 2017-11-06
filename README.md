@@ -22,7 +22,7 @@ https://hellokoding.com/registration-and-login-example-with-spring-xml-configura
 
 ## Ansible Plabook Usage Requirements: ######
 
-Requirements
+
 
  This role requires Ansible 2.4 or higher and platform requirements are listed in the metadata file.
 
@@ -40,6 +40,7 @@ If you are using this Plabooks By default installing the
 Role Variables
 
   The variables that can be passed to this role and a brief description about them are as follows.
+  
   ################## Java##########################################
   # vars file for java
   Ubuntu_java: openjdk-8-jdk 
