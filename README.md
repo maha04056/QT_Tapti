@@ -18,3 +18,17 @@ https://hellokoding.com/registration-and-login-example-with-spring-xml-configura
 
 ## Run
 ```mvn jetty:run```
+
+
+Ansible Plabook Usage Requirements:
+
+OS specificatios:
+- Ubuntu: 16.04
+- Redhat 7
+- CentOs 7
+
+If you are  useing this  Plabooks By default installing
+  - Openjdk 8 
+  - tomcat7
+  - Deploying war file to application server 
+  
