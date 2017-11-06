@@ -62,6 +62,7 @@ min_mem: 128
 tomcat_pack_extra: [ "tomcat7-docs", "tomcat7-admin", "tomcat7-examples" ]
 
    Manager username and password
+
 tomcat_mang_username: admin
 
 tomcat_mang_password: qttapti
@@ -73,11 +74,13 @@ tomcat_mang_password: qttapti
 tomcat_pack: [ "tomcat", "tomcat-webapps", "tomcat-admin-webapps" ]
 
     # java hep mem varibles
+
 max_mem: 512
 
 min_mem: 256
 
    Manager username and password
+
 tomcat_user: admin
 
 tomcat_passwd: qttapti
