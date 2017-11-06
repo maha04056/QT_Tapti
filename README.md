@@ -48,12 +48,12 @@ Role Variables
   Redhat_java: java-1.8.0-openjdk
   
   ---------------------------------
-#################### vars file for tomcat7 (UBUNTU)##########################
+# vars file for tomcat7 (UBUNTU)
 
 
 tomcat_packag: tomcat7
 
-   # java hep mem varibles
+    java hep mem varibles
 
 max_mem: 512
 
@@ -61,14 +61,15 @@ min_mem: 128
 
 tomcat_pack_extra: [ "tomcat7-docs", "tomcat7-admin", "tomcat7-examples" ]
 
-   # Manager username and password
+   Manager username and password
 tomcat_mang_username: admin
 
 tomcat_mang_password: qttapti
 
 
 ------------------------------
-######################## vars file for tomcat (RedHat)###################################
+# vars file for tomcat (RedHat)
+
 tomcat_pack: [ "tomcat", "tomcat-webapps", "tomcat-admin-webapps" ]
 
     # java hep mem varibles
@@ -76,13 +77,13 @@ max_mem: 512
 
 min_mem: 256
 
-  # Manager username and password
+   Manager username and password
 tomcat_user: admin
 
 tomcat_passwd: qttapti
 
 ---------------------------
-###################### vars file for Deploy #########################################
+## vars file for Deploy 
 
 build_num: 10
 
