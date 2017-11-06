@@ -22,7 +22,7 @@ https://hellokoding.com/registration-and-login-example-with-spring-xml-configura
 
 Ansible Plabook Usage Requirements:
 
-OS specificatios:
+OS specifications:
 - Ubuntu: 16.04
 - Redhat 7
 - CentOs 7
