@@ -43,6 +43,7 @@ Role Variables
   ################## Java##########################################
   # vars file for java
   Ubuntu_java: openjdk-8-jdk 
+
   Redhat_java: java-1.8.0-openjdk
   
   ---------------------------------
@@ -54,12 +55,14 @@ tomcat_packag: tomcat7
    # java hep mem varibles
 
 max_mem: 512
+
 min_mem: 128 
 
 tomcat_pack_extra: [ "tomcat7-docs", "tomcat7-admin", "tomcat7-examples" ]
 
    # Manager username and password
 tomcat_mang_username: admin
+
 tomcat_mang_password: qttapti
 
 
@@ -69,16 +72,19 @@ tomcat_pack: [ "tomcat", "tomcat-webapps", "tomcat-admin-webapps" ]
 
     # java hep mem varibles
 max_mem: 512
+
 min_mem: 256
 
   # Manager username and password
 tomcat_user: admin
+
 tomcat_passwd: qttapti
 
 ---------------------------
 ###################### vars file for Deploy #########################################
 
 build_num: 10
+
 url_path: http://34.214.175.185:8081/artifactory/qttapti_sit/{{build_num}}/target/QTtapti-1.0.war
 
   
