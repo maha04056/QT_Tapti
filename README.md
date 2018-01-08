@@ -1,20 +1,25 @@
-# Registration and Login Example with Spring MVC 4, Spring Security, Spring Data JPA, XML Configuration, Maven, JSP, and MySQL.
+# JavaBasedInternetapplication.
+Online Registration and Login pages for enrolling in E-commerce web site
+Tool Stack:
 
-## Guide
-https://hellokoding.com/registration-and-login-example-with-spring-xml-configuration-maven-jsp-and-mysql/
+1.	Version Control        :  Git
+2.	CI                     :  jenkins 2.7
+3.	Build                  :  Maven 3.3.9
+4.	CM                     : Ansible 2.2, Python2.7
+5.	Artifactory            : Jfrog 5.5
+6.	Containerization       : Docker 1.13 , K8S 1.7.X
+7.	Cloud                  : AWS
+8.	Virtualization         : Vagrant 1.9.3 , VirtualBOx 5.0
 
-## Prerequisites
-- JDK 1.8 or later
-- Maven 3 or later
-- MySQL 5.6 or later
+Project Pipeline (workflow):
+1)CI_DEV jobs run builds and unit tests every 2hrs  after code  commit code into git. Result Send mails.
 
-## Stack
-- Spring MVC
-- Spring Security
-- Spring Data JPA
-- Maven
-- JSP
-- MySQL
+2)CI_SIT jobs run every night at 2AM. After success of sat build the war file  will be deploy in SIT environment and push in SAT_Repo(jfrog). Result Send mails
+
+3)CI_UAT jobs builds run every night at 2AM. After success of uat build war file deploy in UAT environment and push in UAT_Repo(jfrog) Result send mails
+
+4)CD_Deliver jobs after successfully completed and approved by UAT, the war file move in Prod_Repo(jfrog). Result Send mails
+
 
 ## Run
 ```mvn jetty:run```
