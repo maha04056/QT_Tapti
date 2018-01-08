@@ -86,12 +86,12 @@ tomcat_user: admin
 tomcat_passwd: qttapti
 
 ---------------------------
-## vars file for Deploy 
+## Wars file for Deploy for SIT
+Jenkins job as upstream job compile, test, package of war file and push war file into Jfrog.  In same build ENV docker build with latest dev code and push docker image in dockerhub.
+docker build -t qttapti/qttapti:${BUILD_NUMBER}  .
+docker push qttapti/qttapti:${BUILD_NUMBER}
 
-build_num: 10
-
+Jenkins job as downstream job call host and deploy playbook files.
 url_path: http://34.214.175.185:8081/artifactory/qttapti_sit/{{build_num}}/target/QTtapti-1.0.war
 
-  
-  
-  
+The above steps to be repeated for UAT
